@@ -1,0 +1,9 @@
+tc_cmm:
+  version: 1.x
+  js:
+    js/tc_cmm.js: {preprocess: false}
+  dependencies:
+    - core/jquery
+    - core/jquery.once
+    - core/jquery.ui.dialog
+    - core/jquery.ui.datepicker

@@ -1,0 +1,4 @@
+access data_admin_cmm:
+  title: 'Accès uniquement pour les administrateurs CMM'
+  description: 'Accès uniquement pour les administrateurs CMM'
+

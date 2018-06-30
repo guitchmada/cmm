@@ -1,0 +1,30 @@
+<?php
+
+use Drupal\Core\Form\FormStateInterface;
+use Drupal\taxonomy\Entity\Term;
+use Drupal\node\NodeInterface;
+use Drupal\Core\Url;
+use Drupal\views;
+use Drupal\views\ViewExecutable;
+use Drupal\Core\Link;
+use Drupal\node\Entity\Node;
+use \Drupal\Core\Routing\TrustedRedirectResponse;
+use Symfony\Component\HttpFoundation\RedirectResponse;
+use Symfony\Component\HttpFoundation\Response;
+use Drupal\Core\Ajax\AjaxResponse;
+use Drupal\Component\Serialization\Json;
+
+
+function tc_cmm_form_alter(&$form, \Drupal\Core\Form\FormStateInterface $form_state, $form_id) {
+	//kint($form['actions']);
+	if ($form_id == 'node_event_edit_form' || $form_id == 'node_event_form') {
+    		$form['actions']['submit']['#submit'][] = 'tc_cmm_event_callback_save';
+
+  	}
+	
+}
+	
+function tc_cmm_event_callback_save(array &$form, FormStateInterface $form_state) {
+  $form_state->setRedirect('tc_cmm.liste_events');
+}
+?>

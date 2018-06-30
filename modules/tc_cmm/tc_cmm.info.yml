@@ -1,0 +1,7 @@
+name: tc_cmm
+description: tc_cmm
+core: 8.x
+package: Tanyah Consulting pour CMM
+type: module
+libraries: 
+  - tc_cmm/tc_cmm_libraries
