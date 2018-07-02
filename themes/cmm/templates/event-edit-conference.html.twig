@@ -1,0 +1,23 @@
+<form class="{{ attributes.id }}" data-drupal-selector="{{ attributes.id }}" action="{{ attributes.action }}" 
+method="post" id="{{ attributes.id }}" accept-charset="UTF-8">
+
+{{ element.form_build_id }}
+{{ element.form_token }}
+{{ element.form_id }}
+
+<div class="col-sm-3">{{ element.field_type_event }}</div><div class="col-sm-6">{{ element.title }}</div>
+<div class="col-sm-12">{{ element.field_description_courte }}</div>
+
+<div class="return_line">&nbsp;</div>
+
+<div class="col-sm-3">{{ element.field_start_date }}</div><div class="col-sm-3">{{ element.field_end_date }}</div>
+<div class="return_line">&nbsp;</div>
+<div class="col-sm-3">{{ element.field_date_ouverture_inscription }}</div><div class="col-sm-3">{{ element.field_date_limite_inscription }}</div>
+<div class="return_line">&nbsp;</div>
+
+{{ element.speakers }}
+{{ element.id2 }}
+
+{{ element.actions }}
+
+</form>

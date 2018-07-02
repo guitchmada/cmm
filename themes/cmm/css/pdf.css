@@ -1,0 +1,201 @@
+/* latin */
+@font-face {
+  font-family: 'Calibri';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Calibri'), url(../fonts/calibri.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215;
+}
+/* latin */
+@font-face {
+  font-family: 'Calibri';
+  font-style: normal;
+  font-weight: bold;
+  src: local('Calibri Bold'), local('Calibri-Bold'), url(../fonts/calibri_bold.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215;
+}
+#print-area {
+  position: relative;
+  top: 1cm;
+  left: 0;
+  bottom: 1cm;
+  font-size: 10pt;
+  font-family: Calibri, Candara, Segoe, "Segoe UI", Optima, Arial, sans-serif;
+}
+#print-area h1 {
+  font-weight: normal;
+  font-size: 16pt;
+  margin-bottom: 1cm;
+  padding: 0;
+}
+#print-area h2 {
+  display: block;
+  font-size: 12pt;
+  color: #4fbc84;
+  border-bottom: solid #bfbfbf 3.0pt;
+  padding: 0cm 0cm 1.0pt 0cm;
+  margin-bottom: 0.6cm;
+}
+#print-area h3 {
+  display: block;
+  border: solid windowtext 1.0pt;
+  padding: 1.0pt 4.0pt 1.0pt 4.0pt;
+  margin-bottom: 0.5cm;
+  font-size: 10pt;
+}
+#print-area .question {
+  page-break-inside: avoid;
+  margin-bottom: 0.8cm;
+}
+#print-area .question .question-title .title {
+  font-weight: bold;
+  margin-bottom: 0.4cm;
+}
+#print-area .question .question-title .question-explication {
+  margin-bottom: 1cm;
+}
+#print-area .question .questions-answers {
+  margin-bottom: 0.7cm;
+}
+#print-area .question .questions-answers .questions-answer {
+  margin: 0 0.3cm 0 0.3cm;
+}
+#print-area .question .questions-answers.orientation-h .questions-answer {
+  display: inline-block;
+}
+#print-area .question .questions-answers .questions-answer {
+  position: relative;
+}
+#print-area .question .questions-answers .questions-answer .check {
+  display: inline-block;
+  width: 8pt;
+  height: 8pt;
+  border: 1px solid #000;
+}
+#print-area .question .questions-answers .questions-answer .check.check-abs {
+  position: absolute;
+  top: 2pt;
+}
+#print-area .question .questions-answers .questions-answer.answer-selected .check {
+  background-color: #000;
+}
+#print-area .question .questions-answers .questions-answer .txt {
+  padding-left: 0.6cm;
+  display: inline-block;
+}
+#print-area .question .questions-comment {
+  height: 0.7cm;
+}
+#print-area .tb-hypotheses {
+  width: 100%;
+}
+#print-area .tb-hypotheses td {
+  width: 20%;
+  text-align: center;
+}
+#print-area .tb-hypotheses td img {
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+#print-area .tb-hypotheses td.color-gray {
+  color: gray;
+}
+#print-area .qra5_border {
+  padding: 0.5cm;
+  font-style: italic;
+  border: 1pt solid #000;
+  margin-bottom: 1cm;
+}
+#print-area .qra5_border #connaissances_investissements_1 {
+  font-weight: bold;
+}
+#print-area table.qra5_6 {
+  width: 100%;
+  border-spacing: 0;
+  border-bottom: 1px solid #000;
+}
+#print-area table.qra5_6 tr td {
+  text-align: center;
+  padding: 0.2cm !important;
+}
+#print-area table.qra5_6 .questions-answer .check {
+  display: inline-block;
+  width: 8pt;
+  height: 8pt;
+  border: 1px solid #000;
+}
+#print-area table.qra5_6 .questions-answer.answer-selected .check {
+  background-color: #000;
+}
+#print-area #connaissances_investissements_3,
+#print-area #partie_ii,
+#print-area #partie_iii {
+  font-weight: bold;
+  display: inline-block;
+  border-bottom: 1pt solid #000;
+  padding-bottom: 0.1cm;
+  margin-bottom: 1cm;
+}
+#print-area #connaissances_investissements_4 {
+  font-weight: bold;
+  margin-bottom: 1.4cm;
+}
+#print-area .align-center {
+  text-align: center;
+}
+#print-area td.cell-duree {
+  border-top: 1px solid #000 !important;
+  border-right: 1px solid #000 !important;
+}
+#print-area .vertical {
+  transform: rotate(-90deg) !important;
+  -webkit-transform: rotate(-90deg);
+}
+#print-area td.btr {
+  border-top: 1px solid #000 !important;
+  border-right: 1px solid #000 !important;
+}
+#print-area table.max-h {
+  height: 100% !important;
+}
+#print-area .explication-knowledge {
+  margin-top: 1cm;
+}
+#print-area table.legende_explication td {
+  vertical-align: top;
+  padding-bottom: 0.5cm !important;
+}
+#print-area .knowledge_title {
+  font-size: 12pt;
+  font-weight: bold;
+  margin-bottom: 0.7cm;
+  margin-top: 0.3cm;
+}
+#print-area .question_underline {
+  text-decoration: underline;
+}
+#print-area .knowledge_questions {
+  page-break-inside: avoid;
+}
+#print-area .profile_name {
+  text-transform: capitalize;
+}
+#print-area #signature {
+  margin-top: 2cm;
+}
+#print-area #date-signature {
+  margin-bottom: 2cm;
+}
+#print-area #signature_titulaire {
+  padding-bottom: 1.5cm;
+  border-bottom: 1pt solid gray;
+  width: 7cm;
+  margin-bottom: 3cm;
+}
+#print-area #explications-profile-disclaimer {
+  font-size: 8pt;
+  font-weight: bold;
+}

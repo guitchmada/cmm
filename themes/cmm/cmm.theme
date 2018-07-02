@@ -1,0 +1,252 @@
+<?php
+/**
+ * @file
+ * cmm theme
+ */
+//use Drupal\Core\Url;
+
+use Drupal\bootstrap\Bootstrap;
+use Drupal\Core\Entity\EntityInterface;
+use Drupal\Core\Link;
+use Drupal\Component\Utility\Html;
+
+function cmm_preprocess_links__language_block(&$variables) {
+	$language = \Drupal::languageManager()->getCurrentLanguage()->getId();
+	$variables['current_language'] = $language;
+}
+
+
+// ********************************
+//Passe des variables dans page.html.twig
+// ********************************
+function cmm_preprocess_page(&$variables) {
+	$variables['id2'] = 'zzz3';
+	$uid = \Drupal::currentUser()->id();
+	$path = \Drupal::request()->getpathInfo();
+	
+
+	$variables['mode'] = 'notconnected';
+	
+	if (!empty($uid)) {
+		$user = \Drupal\user\Entity\User::load($uid);
+		/*if ($user) {
+			(!empty($user->get('field_nom')->getValue()))?
+				$nom = $user->get('field_nom')->getValue()[0]['value']: $nom = '';
+			(!empty($user->get('field_prenom')->getValue()))?
+				$prenom = $user->get('field_prenom')->getValue()[0]['value']: $prenom = '';
+			
+			//Si c'est un user périscolaire, on ajoute entre parenthèse le site (surtout pour les tests)
+			$site = "";
+			if (in_array('gestionnaire_cesame', \Drupal::currentUser()->getRoles())) {
+				if ($user->get('field_site')->getValue()) {
+			  		$siteId = $user->get('field_site')->getValue()[0]['target_id'];
+			  	} else {
+			  		$siteId = ID_SITE_UCCLE;
+			    }
+			    $site = " (".ac_getLabelIdTerm($siteId).")";
+			}
+		   
+	  		$variables['user_connected'] = $prenom. ' ' .$nom;
+	  		$variables['#cache']['contexts'][] = 'user';
+	  		$variables['mode'] = 'connected';
+	  		
+	  	} */
+	 } else {
+  		
+  		if (strpos($path, 'user/reset') > 0) {
+			//On est en reset du mdp
+			$variables['mode'] = 'resetpwd';
+		}
+  	}
+  	
+  	$node = \Drupal::request()->attributes->get('node');
+  	if ($node) {
+  		$nid = $node->id();
+  		$variables['idnode'] = $nid;
+  	} else $variables['idnode'] = 0;
+ 
+  	$site_config = \Drupal::config('system.site');
+	$variables['site_adresse'] = $site_config->get('site_adresse');
+
+  	
+  	
+}
+
+
+// ********************************
+// 
+// ********************************
+function cmm_preprocess_form(&$variables) {
+
+	
+}
+
+
+// ********************************
+// On passe ici en views d'un node, pas en edit
+// par contre la variable que pour node/1 ... PKOI ???
+// ********************************
+function cmm_preprocess_node(&$variables) {
+	
+	
+    
+	if (isset($variables['elements']['#node'])) {
+		$type = $variables['elements']['#node']->getType();
+		if ($type == 'event') {
+			$id = $variables['node']->id();;
+			$event = \Drupal::entityTypeManager()->getStorage('node')->load($id);
+	 		$typeEvent = $event->get('field_type_event')->getValue()['0']['target_id'];
+			$variables['id'] = $id;
+			$variables['field_start_date'] = $event->get('field_start_date')->getValue()['0']['value'];
+			$variables['field_end_date'] = $event->get('field_end_date')->getValue()['0']['value'];
+			$variables['field_date_limite_inscription'] = $event->get('field_date_limite_inscription')->getValue()['0']['value'];
+			$variables['field_date_ouverture_inscription'] = $event->get('field_date_ouverture_inscription')->getValue()['0']['value'];
+			$variables['title'] = $event->get('title')->getValue()['0']['value'];
+			$variables['field_description_courte'] = $event->get('field_description_courte')->getValue()['0']['value'];
+			$variables['id_type_event'] = $typeEvent;
+			$term = \Drupal\taxonomy\Entity\Term::load($typeEvent);
+			$variables['field_type_event'] = $term->toLink()->getText();
+			
+			$vw = views_embed_view('speakers_de_la_conference', 'block_1', $id);
+            $renderview = \Drupal::service('renderer')->render($vw);
+			$variables['speakers'] = $renderview;
+			
+			$vw = views_embed_view('sponsors_de_la_conference', 'block_1', $id);
+            $renderview = \Drupal::service('renderer')->render($vw);
+			$variables['sponsors'] = $renderview;	
+				
+			
+		}
+	}
+	
+	$config = \Drupal::configFactory()->getEditable('cmm_general.settings');
+	$variables['environnement'] = $config->get('environnement');
+	
+
+	$node = \Drupal::request()->attributes->get('node');
+	if ($node) {
+	  	$nid = $node->id();
+	  	$variables['idnode'] = $nid;
+	  	
+	  	$block1Title = t("La Chambre des Mines de Madagascar");
+	  	$block1 = t("Retrouvez les informations et actualités sur le secteur minier.");
+		$variables['block1Title'] = $block1Title;
+		$variables['block1'] = $block1;
+		
+		$block2Title = t("Espace membre");
+	  	$block2 = t("<br>Espace dédié aux membres avec agenda des évènements et réunions, documents...<br>
+	  	Cliquez <a href='/node/1'>ici</a>.");
+		$variables['block2Title'] = $block2Title;
+		$variables['block2'] = $block2;
+		 
+		$block3Title = t("Conférences annuelles");
+	  	$block3 = t("<br>Retrouvez les programmes des conférences annuelles et enregistrez vous en ligne à la prochaine.");
+		$variables['block3Title'] = $block3Title;
+		$variables['block3'] = $block3;
+	}
+  	
+}
+
+
+// ********************************
+// 
+// ********************************
+function cmm_preprocess_block(&$variables) {
+
+	$language = \Drupal::languageManager()->getCurrentLanguage()->getId();
+
+	$site_config = \Drupal::config('system.site');
+	$variables['site_adresse'] = $site_config->get('site_adresse');
+	
+}
+
+
+
+
+// ********************************
+// 
+// ********************************
+function cmm_theme() {
+
+	// passe les variables au formulaire ?
+	$themes['event_edit_conference'] = [
+		'render element' => 'form'
+    ];
+    
+    
+   
+    return $theme;
+    
+}
+
+
+// ********************************
+// Hook pour appeler des templates custom de form et en display (consult)
+// ********************************
+function cmm_theme_suggestions_alter(array &$suggestions, array $variables)
+{ 
+
+	if (isset($variables['theme_hook_original']) && $variables['theme_hook_original'] == 'node') {
+		$type = $variables['elements']['#node']->getType();
+		if ($type == 'event') {
+			$id = $variables['elements']['#node']->id();
+			$event = \Drupal::entityTypeManager()->getStorage('node')->load($id);
+	 		$typeEvent = $event->get('field_type_event')->getValue()['0']['target_id'];
+			if ($typeEvent == 5) {
+        			//Conférence annuelle
+	        		//Il faut mettre des underscore, sinon ca ne fonctionne pas
+	        		//Uniquement si c'est un type conférence
+	        		//$suggestions[] = "event_conference";
+	        		
+	   			//Mais le twig doit s'appeler event-conference.html.twig
+	   		} else {
+	   			//$suggestions[] = "event_noconference";
+	   		}
+		}
+		
+	}
+	 
+	 if (isset($variables['element']) && isset($variables['element']['#bundle'])) {
+	 	if ($variables['element']['#bundle'] == 'event') {
+	 		$id = $variables['element']['#object']->id();
+	 		$event = \Drupal::entityTypeManager()->getStorage('node')->load($id);
+	 		$typeEvent = $event->get('field_type_event')->getValue()['0']['target_id'];
+	 		//Non car c'est pour chaque champ !
+		   		
+	 	}
+	 
+	 }
+	
+	
+	 
+	//Permet d'appeler un twig spécial pour le form de l'event
+	//ne pas oublier d'ajouter le return dans cmm_theme()
+    if (isset($variables['element']) && isset($variables['element']['#type'])) {
+    
+    		
+    		$original_theme_hook = $variables['theme_hook_original']; //On aura 'form'
+    		
+    		if ($variables['element']['#type'] == 'form') {
+	        
+	        if ($variables['element']['#id'] == 'node-event-edit-form') {
+	        		$typeEvent =  $variables['element']['field_type_event']['widget']['#value'][0];
+	        		if ($typeEvent == 5) {
+	        			//Conférence annuelle
+		        		//Il faut mettre des underscore, sinon ca ne fonctionne pas
+		        		//Uniquement si c'est un type conférence
+		        		$suggestions[] = "event_edit_conference";
+		   			//Mais le twig doit s'appeler event-edit-conference.html.twig
+		   			
+		   			
+					
+		   		} else {
+		   			$suggestions[] = "event_edit_noconference";
+		   		}
+	   			
+	   		}
+	   	}
+	}
+
+    return $suggestions;
+ 
+}

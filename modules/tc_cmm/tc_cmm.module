@@ -16,15 +16,51 @@ use Drupal\Component\Serialization\Json;
 
 
 function tc_cmm_form_alter(&$form, \Drupal\Core\Form\FormStateInterface $form_state, $form_id) {
-	//kint($form['actions']);
+	//kint($form_id);
 	if ($form_id == 'node_event_edit_form' || $form_id == 'node_event_form') {
-    		$form['actions']['submit']['#submit'][] = 'tc_cmm_event_callback_save';
-
-  	}
+		//Si conférence : 
+		
+		$path = \Drupal::request()->getpathInfo();
+	    $arg = explode('/', $path);
+	    if (isset($arg[3]) && $arg[3] != 'edit') {
+	      $id = intVal($arg[3]);
+	    } elseif (isset($arg[2]) && $arg[2]!== 'edit') {
+	      $id = intVal($arg[2]);
+	    }
+		
+		$vw = views_embed_view('speakers_de_la_conference', 'block_2', $id);
+        $renderview = \Drupal::service('renderer')->render($vw);
+		
+		
+		$form['speakers'] =
+            array('#markup' => '<hr />' . $renderview);
 	
+    		$form['actions']['submit']['#submit'][] = 'tc_cmm_event_callback_save';
+  	}
+  	
+  	if ($form_id == 'node_ouvrages_edit_form' || $form_id == 'node_ouvrages_form') {
+    		$form['actions']['submit']['#submit'][] = 'tc_cmm_ouvrages_callback_save';
+  	}
+  	
+  	//if (in_array($form['#id'], array('views-exposed-form-vw-liste-activites-moniteur-page-1'))){
+  	
+  	//} 
+  		
+}
+
+
+function tc_cmm_page_attachments_alter(array &$attachments) {
+	if (!in_array('tc_cmm/tc_cmm_library', $attachments['#attached']['library'])) {
+  		$attachments['#attached']['library'][] = 'tc_cmm/tc_cmm_library';
+  	}
 }
 	
 function tc_cmm_event_callback_save(array &$form, FormStateInterface $form_state) {
   $form_state->setRedirect('tc_cmm.liste_events');
 }
+
+function tc_cmm_ouvrages_callback_save(array &$form, FormStateInterface $form_state) {
+  $form_state->setRedirect('tc_cmm.liste_ouvrages');
+}
+
 ?>

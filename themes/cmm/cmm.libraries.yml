@@ -1,0 +1,8 @@
+global-styling:
+  css:
+    theme:
+      css/style.css: {}
+      css/jquery-confirm.min.css: {}
+  js:
+    js/cmm.js: {}
+    js/jquery-confirm.min.js: {}

@@ -1,0 +1,218 @@
+/* latin */
+@font-face {
+  font-family: 'Calibri';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Calibri'), url(../fonts/calibri.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215;
+}
+/* latin */
+@font-face {
+  font-family: 'Calibri';
+  font-style: normal;
+  font-weight: bold;
+  src: local('Calibri Bold'), local('Calibri-Bold'), url(../fonts/calibri_bold.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215;
+}
+#print-area {
+  position: relative;
+  top: 1cm;
+  left: 0;
+  bottom: 1cm;
+  font-size: 10pt;
+  font-family: Calibri, Candara, Segoe, "Segoe UI", Optima, Arial, sans-serif;
+  h1 {
+    font-weight: normal;
+    font-size: 18pt;
+    margin-bottom: 1.5cm;
+    padding: 0;
+  }
+  h2 {
+    display: block;
+    font-size: 12pt;
+    color: #4fbc84;
+    border-bottom: solid #bfbfbf 3.0pt;
+    padding: 0cm 0cm 1.0pt 0cm;
+    margin-bottom: 0.6cm;
+  }
+  h3 {
+    display: block;
+    border: solid windowtext 1.0pt;
+    padding: 1.0pt 4.0pt 1.0pt 4.0pt;
+    margin-bottom: 0.5cm;
+    font-size: 10pt;
+  }
+  .question {
+    page-break-inside: avoid;
+    .question-title {
+      .title {
+        font-weight: bold;
+        margin-bottom: 0.4cm;
+      }
+      .question-explication {
+        margin-bottom: 1cm;
+      }
+    }
+    .questions-answers {
+      margin-bottom: 0.7cm;
+      .questions-answer {
+        margin: 0 0.3cm 0 0.3cm;
+      }
+      &.orientation-h {
+        .questions-answer {
+          display: inline-block;
+        }
+      }
+      .questions-answer {
+        position: relative;
+        .check {
+          display: inline-block;
+          width: 8pt;
+          height: 8pt;
+          border: 1px solid #000;
+          &.check-abs {
+            position: absolute;
+            top: 2pt;
+          }
+        }
+        &.answer-selected {
+          .check {
+            background-color: #000;
+          }
+        }
+        .txt {
+          padding-left: 0.6cm;
+          display: inline-block;
+        }
+      }
+    }
+    .questions-comment {
+      height: 0.7cm;
+    }
+    margin-bottom: 0.8cm;
+  }
+  .tb-hypotheses {
+    width: 100%;
+    td {
+      width: 20%;
+      text-align: center;
+      img {
+        margin-left: auto;
+        margin-right: auto;
+        display: block;
+        max-width: 100%;
+        height: auto;
+      }
+      &.color-gray {
+        color: gray;
+      }
+    }
+  }
+
+  .qra5_border {
+    padding: 0.5cm;
+    font-style: italic;
+    #connaissances_investissements_1 {
+      font-weight: bold;
+    }
+    border: 1pt solid #000;
+    margin-bottom: 1cm;
+  }
+  table.qra5_6 {
+    width: 100%;
+    border-spacing: 0;
+    border-bottom: 1px solid #000;
+    tr {
+      td {
+        text-align: center;
+        padding: 0.2cm !important;
+      }
+    }
+    .questions-answer {
+      .check {
+        display: inline-block;
+        width: 8pt;
+        height: 8pt;
+        border: 1px solid #000;
+      }
+
+      &.answer-selected {
+        .check {
+          background-color: #000;
+        }
+      }
+    }
+  }
+  #connaissances_investissements_3, #partie_ii, #partie_iii {
+    font-weight: bold;
+    display: inline-block;
+    border-bottom: 1pt solid #000;
+    padding-bottom: 0.1cm;
+    margin-bottom: 1cm;
+  }
+  #connaissances_investissements_4 {
+    font-weight: bold;
+    margin-bottom: 1.4cm;
+  }
+  .align-center {
+    text-align: center;
+  }
+  td.cell-duree {
+    border-top: 1px solid #000 !important;
+    border-right: 1px solid #000 !important;
+  }
+  .vertical {
+    transform: rotate(-90deg) !important;
+    -webkit-transform: rotate(-90deg);
+  }
+  td.btr {
+    border-top: 1px solid #000 !important;
+    border-right: 1px solid #000 !important;
+  }
+  table.max-h {
+    height: 100% !important;
+  }
+  .explication-knowledge {
+    margin-top: 1cm;
+  }
+  table.legende_explication {
+    td {
+      vertical-align: top;
+      padding-bottom: 0.5cm !important;
+    }
+  }
+  .knowledge_title {
+    font-size: 12pt;
+    font-weight: bold;
+    margin-bottom: 0.7cm;
+    margin-top: 0.3cm;
+  }
+  .question_underline {
+    text-decoration: underline;
+  }
+  .knowledge_questions {
+    page-break-inside: avoid;
+  }
+  .profile_name {
+    text-transform: capitalize;
+  }
+  .profile {
+    //font-weight: bold;
+  }
+  #signature {
+    margin-top: 2cm;
+  }
+  #date-signature {
+    margin-bottom: 2cm;
+  }
+  #signature_titulaire {
+    padding-bottom: 1.5cm;
+    border-bottom: 1pt solid gray;
+    width: 7cm;
+    margin-bottom: 3cm;
+  }
+  #explications-profile-disclaimer {
+    font-size: 8pt;
+    font-weight: bold;
+  }
+}

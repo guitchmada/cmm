@@ -1,0 +1,1907 @@
+/***********************************/
+/*          cmm STYLES           */
+/***********************************/
+/*---------------------------------------------------
+    LESS Elements 0.9
+  ---------------------------------------------------
+    A set of useful LESS mixins
+    More info at: http://lesselements.com
+  ---------------------------------------------------*/
+/***********************************/
+/* surchage du fichier /sandstone/bootstrap.css */
+@import 'over-standstone.css';
+/***********************************/
+/* ADAPTATION OF BOOTSTRAP */
+body {
+  margin-top: 0;
+  color: grey;
+  font-size:12px;
+}
+
+h1,
+.h1 {
+  font-size: 30px;
+}
+.alert-success {
+  background-color: #DADA56;
+  color: #3E3F3A;
+}
+.btn-primary,
+.progress-bar {
+  background-color: #4c6850;
+}
+/* fix padding problem withe input type=file */
+input.form-file.form-control {
+  padding: 0;
+}
+.page-header {
+  padding: 5px;
+  margin: 0;
+  border-bottom: none;
+  color: #EFEFD1;
+  text-transform: uppercase;
+  font-size: 20px;
+}
+.region-header {
+  margin-bottom: 15px;
+}
+/* pour avoir les colonnes gauche et droite de la même apparence que les onglets */
+aside.col-sm-3 {
+  padding: 15px;
+  background-color: #f8f5f0;
+  border: 1px #dfd7ca solid;
+  color: #98978b;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+}
+/* alignement des entêtes */
+.header-logo,
+.heading {
+  padding: 0;
+}
+@media screen and (min-width: 768px) {
+  .navbar.container {
+    max-width: 750px;
+  }
+}
+@media screen and (min-width: 992px) {
+  .navbar.container {
+    max-width: 970px;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .navbar.container {
+    max-width: 1170px;
+  }
+}
+/***********************************/
+/***********************************/
+/* RESPONSIVE MENU */
+/* superwide screens */
+/*@media all and (min-width: 1400px) {
+  .block-responsive-menu-toggle {
+    display: none;
+  }
+  .region-resp-menu {
+    position: absolute;
+    min-height: 100%;
+    width: 300px;
+    padding: 15px;
+    background: @color-gris-fonce;
+    color: @color-gris-clair;
+    font-size: 1.1em;
+    a {
+      color: @color-vert-logo;
+    }
+    .cmm-horizontal-menu {
+
+    }
+  }
+  .resp-menu-page {
+    margin-left: 320px;
+    max-width: 1170px;
+  }
+}*/
+/* smaller than superwide */
+/*@media all and (max-width: 1399px) {*/
+.region-resp-menu {
+  display: none;
+}
+.region-navigation {
+  position: relative;
+  padding-left: 85px;
+}
+.block-responsive-menu-toggle {
+	background-color: #e4e6e2;
+	height:56px;
+  position: absolute;
+  top: 15px;
+  left: 20px;
+  z-index: 2;
+  width: auto;
+ /* background-color: #DADA56; vert*/
+ /* background-color: #4169E1; bleu */
+ /* gris */
+  /*border: 1px @color-gris-fonce solid;*/
+  overflow: hidden;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+}
+.responsive-menu-toggle-icon {
+  width: 50px;
+  height: 40px;
+}
+.responsive-menu-toggle-icon span.label {
+  top: 40px;
+  left: 0px;
+  color: #000;
+  font-size: 12px;
+}
+.responsive-menu-toggle {
+    display: inline-block!important;
+}
+.responsive-menu-toggle-icon:before,
+.responsive-menu-toggle-icon:after,
+.responsive-menu-toggle-icon span.icon {
+  background-color: #3E3F3A !important;
+  width: 34px;
+  height: 3px;
+  left: 8px;
+}
+.responsive-menu-toggle-icon:before {
+  top: 10px;
+}
+.responsive-menu-toggle-icon span.icon {
+  top: 18px;
+}
+.responsive-menu-toggle-icon:after {
+  top: 26px;
+}
+.mm-menu.mm-theme-dark {
+  background: #3E3F3A;
+  color: #EFEFD1;
+}
+.mm-menu.mm-theme-dark em.mm-counter,
+.mm-menu.mm-theme-dark .mm-navbar > *,
+.mm-menu.mm-theme-dark .mm-navbar a {
+  font-size: 1.4em;
+  color: #DADA56;
+}
+.mm-menu.mm-theme-dark .mm-btn::after,
+.mm-menu.mm-theme-dark .mm-btn::before,
+.mm-menu.mm-theme-dark .mm-listview > li .mm-next::after {
+  border-color: #DADA56;
+}
+.mm-menu.mm-theme-dark .with-below {
+  color: #DADA56 !important;
+}
+.mm-menu.mm-theme-dark a {
+  color: #DADA56;
+}
+.mm-menu.mm-theme-dark a:hover,
+.mm-menu.mm-theme-dark a:focus {
+  background-color: #fff;
+}
+/*}*/
+/***********************************/
+/***********************************/
+/* HEADER : MENU & LOGO */
+.header-logo a {
+  color: #DADA56;
+}
+.navbar {
+  min-height: auto;
+}
+.navbar-default .navbar-nav > li > a {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  color: #DADA56;
+}
+.navbar-brand {
+  padding: 25px 0px;
+  float:none!important;
+}
+/***********************************/
+/***********************************/
+/* SELECTEUR DE LANGUE */
+.block-language {
+  float: right;
+}
+.block-language .btn {
+  margin: 15px 15px 5px 5px;
+}
+/*.block-language .is-active {
+  display: none;
+}*/
+/***********************************/
+/***********************************/
+/* FOOTER */
+.footer {
+  background-color: #ce3f27;
+  color: #e8ecf3;
+  font-size: 0.9em;
+  padding-top: 15px!important;
+  padding-bottom: 10px!important;
+}
+.footer a {
+  color: #e8ecf3;
+}
+/***********************************/
+/***********************************/
+/* inscription */
+#edit-field-coordonnees--wrapper .fieldset-legend {
+  display: none;
+}
+#edit-field-eula-wrapper .fieldset-legend {
+  display: none;
+}
+#user-form #edit-field-coordonnees-wrapper {
+  display: none;
+}
+#user-form #edit-field-eula-wrapper {
+  display: none;
+}
+.user-register-form #edit-field-coordonnees--wrapper legend {
+  display: none;
+}
+div #account-inscription #account-inscription--description {
+  color: #3e3f3a;
+  font-size: 16px;
+}
+div #personnal-data #personnal-data--description {
+  color: #3e3f3a;
+  font-size: 16px;
+}
+
+
+
+
+/***************PARAGRAPH DES ARRETS DE BUS DANS LES CIRCUIT ********************/
+/***********************************/
+
+/* SOLUTION 2 */
+.form-timefield-content {
+    position: relative;
+    float: left;
+    left: 100px;
+    top: 26px;
+}
+.form-timefield-content .form-type-select {
+  display: inline-block;
+  top: -13px;
+  position: relative;
+}
+.paragraph-type-title {
+	display:none;
+}
+
+div#edit-field-nombre-enfants-wrapper {
+    left: 0px!important;
+    width: 150px;
+    top: 0px;
+    position:relative;
+}
+.field--name-field-nombre-enfants {
+    width: 50px;
+}
+
+.node-transport-circuits-edit-form .field--name-field-nombre-enfants,
+.node-transport-circuits-form .field--name-field-nombre-enfants {
+    position: absolute;
+    top: 13px;
+    right: 10px;
+}
+.field--name-field-arr .form-select {
+    font-size: 12px;
+}
+
+.field--name-field-arr label.control-label {
+    display: none;
+}
+.field--name-field-arr .js-form-wrapper .form-group {
+    margin-bottom: 1px;
+    height: 12px;
+}
+.field--name-field-arr .paragraphs-subform {
+    top: -20px;
+    position: relative;
+}
+.floatleft {
+    float: left;
+    position: relative;
+    left: 110px;
+}
+/* SOLUTION 1 */
+/* champ 'timefield' */
+/*
+.form-timefield-content .select-wrapper {
+  width: auto;
+}
+.form-timefield-content .form-type-select {
+  display: inline-block;
+  left: 100px;
+  top: -13px;
+  position: relative;
+}
+
+
+.field--name-field-arr li.confirm-remove {
+    position: relative;
+    top: 40px;
+    height: 30px;
+    left: -200px;
+    list-style: none;
+}
+.field--name-field-arr li.restore {
+    position: relative;
+    top: 10px;
+    list-style: none;
+}
+
+
+.field--name-field-arr .form-select {
+    height: 35px;
+    font-size: 12px;
+}
+
+.field--name-field-arr label.control-label {
+    display: none;
+}
+.field--name-field-arr .js-text-full {
+    width: 50px;
+    height: 35px;
+    font-size: 12px;
+}
+
+.field--name-field-arr .paragraphs-subform {
+    top: -20px;
+    position: relative;
+}
+.field--name-field-nombre-enfants {
+    width: 50px;
+}
+
+div#edit-field-nombre-enfants-wrapper {
+    left: 0px!important;
+    width: 150px;
+    top: 0px;
+}
+
+
+.floatleft {
+    float: left;
+}
+
+.field--type-timefield label.control-label {
+    width: 100%;
+}
+
+.field--name-field-arret .select-wrapper {
+    display: block;
+}
+
+.field--type-timefield .form-type-select{
+	width: 65px;
+}
+.paragraph-type-title {
+	display:none;
+}
+.field--name-field-arr .js-form-wrapper .form-group {
+    margin-bottom: 1px;
+    height: 12px;
+}
+
+.node-transport-circuits-edit-form.paragraphs-subform form-group,
+.node-transport-circuits-form.paragraphs-subform form-group {
+    width: 800px;
+}
+
+.node-transport-circuits-edit-form .paragraph-type-top,
+.node-transport-circuits-form .paragraph-type-top {
+    position: relative;
+    z-index:100;
+    left: 850px;
+    top: -5px;
+}
+
+.node-transport-circuits-edit-form .field--name-field-nombre-enfants,
+.node-transport-circuits-form .field--name-field-nombre-enfants {
+    display: inline-block;
+    left: 240px;
+    position: relative;
+    top: -26px;
+}
+
+
+*/
+
+
+
+/***********************************/
+/***********************************/
+/* titres dans la colonne de droite */
+.region-sidebar-second h2,
+.region-sidebar-second .h2 {
+  font-size: 18px;
+  color: #3E3F3A;
+}
+.region-sidebar-second ul.menu.nav {
+  margin-left: 15px;
+}
+/***********************************/
+a#edit-commande-cmm,
+a#edit-commande-activite,
+a#edit-commande-cantine,
+a#edit-commande-casier,
+a#edit-commande-garderie,
+a#edit-commande-natation,
+a#edit-commande-transport {
+        margin-left: 10px;
+    margin-right: 10px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    height: 50px;
+    width: 300px;
+    padding-top: 15px!important;
+}
+
+.dashboard-information h2 {
+	display:none;
+}
+
+.csv-feed.views-rest-feed.form-group {
+    display: none;
+}
+
+.exposed-wrap {
+    display: inline-block;
+    margin: 0 30px 5px 0;
+    vertical-align: top;
+}
+
+#views-exposed-form-comptes-familles-page-1 input#edit-field-gsm-value  {
+	width:250px;
+	}
+#views-exposed-form-comptes-familles-page-1 input#edit-combine,
+#views-exposed-form-comptes-familles-page-1 input#edit-mail {
+    width: 350px;
+}
+
+#views-exposed-form-comptes-familles-page-1 label {
+    display: block!important;
+}
+
+#views-exposed-form-comptes-familles-page-1 .form-item-combine {
+	margin-right:30px;
+}
+
+#edit-submit-comptes-familles,
+#views-exposed-form-comptes-familles-page-1 button#edit-reset {
+    margin-top: 20px;
+}
+
+#views-exposed-form-vw-cmm-inscription-secretariat-page-1 input#edit-field-annee-scolaire-target-id {
+    width: 200px;
+}
+
+span.fieldset-legend.js-form-required.form-required {
+    font-size: 14px;
+    font-weight: normal;
+}
+fieldset legend {
+    margin-bottom: 0px;
+}
+
+a, a:hover, a:focus,  .header-logo a {
+	/*color: #4169E1!important;*/
+	color: #797364!important;
+	text-decoration: underline!important;
+}
+
+.footer a, .mm-menu a {
+	color: #b4b3b3!important;
+	text-decoration: underline!important;
+}
+
+
+#block-selecteurdelangue a.btn.btn-default.btn-sm, .view-header a {
+	color: #b4b3b3!important;
+	text-decoration: underline!important;
+}
+ul.menu.nav.mm-listview .expanded a:hover {
+	color: #000!important;
+	
+}
+
+.btn {
+    color: #fff!important;
+    text-decoration: none!important;
+}
+
+/* pour supprimer les tabs consulter/editer... sur un edit de form de node */
+ul.tabs--primary.nav.nav-tabs {
+    display: none;
+}
+
+/* pour supprimer le bloc des informations sur un edit de form de node */
+/*Sauf si on est admin ! */
+.tabbable.tabs-left.vertical-tabs.clearfix {
+    display: none;
+}
+
+/* idem mais pour l'admin, on laisse affiché */
+
+.toolbar-tray-open .tabbable.tabs-left.vertical-tabs.clearfix {
+    display: block!important;
+}
+
+/* pour supprimer le bouton preview sur un edit de form de node */
+button#edit-preview {
+    display: none;
+}
+
+#edit-delete {
+    color: #fff!important;
+    text-decoration: none!important;
+}
+
+#edit-delete {
+    color: #fff!important;
+    text-decoration: none!important;
+}
+
+#node-circuit-detail-form div#edit-field-circuit-wrapper,
+#node-circuit-detail-edit-form  .js-form-item-field-circuit-0-target-id {
+    display: none;
+}
+
+.rouge {
+	color:red;
+}
+
+.vert {
+	color:green;
+}
+
+div#edit-hidden.form-item.js-form-item.form-wrapper.js-form-wrapper.panel.panel-default {
+	display:none;
+}
+
+#inscription-activites-form3 div#edit-niveau {
+	display: none;
+}
+
+#taxonomy-term-niveaux-activite-form div#edit-relations {
+    display: none;
+}
+
+/* on cache pour les pages de base en FR, n'apparait pas en EN ? */
+div#edit-langcode-wrapper {
+    display: none;
+}
+
+div#numbus {
+    position: relative;
+    top: -55px;
+    left: 300px;
+}
+
+
+div#confirm_reconduction {
+    text-align: center;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+button#cancel_commande_form {
+        margin-left: 10px;
+    margin-right: 10px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    height: 50px;
+    width: 300px;
+    padding-top: 5px!important;
+}
+
+
+
+.node-transport-circuits-edit-form  button,
+.node-transport-circuits-form button {
+   /* height: 35px;
+    padding-top: 7px;*/
+}
+
+
+.dropbutton-widget {
+    top: -40px;
+    position: relative;
+}
+
+.green{
+	color:green;
+}
+.red{
+	color:red;
+}
+
+input#edit-commande-nid {
+    width: 200px;
+    
+}
+
+input#edit-communication-structuree {
+    width: 200px;
+   
+}
+input#edit-dt-paiement {
+    width: 200px;
+    
+}
+input#edit-compte-payeur, input#edit-payeur {
+    width: 200px;
+}
+
+
+.js-form-item-is-matching label.control-label {
+    width: 200px;
+}
+
+#views-exposed-form-liste-des-paiements-page-1  div#edit-actions {
+    position: relative;
+    top: 20px;
+    
+}
+
+button#edit-submit-liste-des-importations-de-paiement {
+    position: relative;
+    top: 10px;
+}
+
+.edit-paiement-form label.control-label {
+    width: 200px;
+}
+
+.edit-paiement-form input#edit-dt-paiement {
+    width: 200px;
+    margin-left: 0px;
+}
+.edit-paiement-form .form-control,
+.edit-paiement-form .select-wrapper {
+    display: inline-block;
+	width: 200px;
+}
+
+.edit-paiement-form input#edit-commande-nid {
+    width: 200px;
+    margin-left: 0px;
+}
+
+.edit-paiement-form input#edit-communication-structuree, 
+input#edit-num-compte-cmm {
+    width: 200px;
+    margin-left: 0px;
+}
+.edit-paiement-form input#edit-num-mouvement {
+	width:200px;
+}
+
+.edit-paiement-form select#edit-statut-paiement {
+    width: 200px;
+}
+
+.edit-paiement-form input#edit-num-compte-cmm {
+    width: 205px;
+}
+
+.edit-paiement-form textarea#edit-li-commentaire {
+    width: 100%!important;
+}
+
+div#edit-actions {
+    display: inline;
+    position: relative;
+    top: 10px;
+}
+
+.edit-paiement-form div#edit-actions {
+    width: 200px!important;
+    display: inline;
+}
+
+
+.exposed-wrap-paiement {
+    display: inline-block;
+    margin: 0 30px 20px 0;
+    vertical-align: top;
+	width: 200px;
+}
+
+.exposed-wrap-activites {
+    display: inline-block;
+    margin: 0 30px 20px 0;
+    vertical-align: top;
+	width: 250px;
+}
+
+.exposed-wrap-activites2 {
+    display: inline-block;
+    margin: 0 30px 20px 0;
+    vertical-align: top;
+	width: 220px;
+}
+
+.exposed-wrap-jour {
+    display: inline-block;
+    margin: 0 30px 20px 0;
+    vertical-align: top;
+    width: 150px;
+}
+
+.js-form-item-field-niveau-classe-target-id label,
+.js-form-item-field-site-target-id label,
+.js-form-item-status label,
+.js-form-item-field-annee-scolaire-target-id label
+ {
+    width: 250px;
+}
+
+.exposed-wrap-comptes{
+    display: inline-block;
+    margin: 0 30px 20px 0;
+    vertical-align: top;
+	width: 250px;
+}
+
+#views-exposed-form-vw-cmm-inscription-secretariat-page-1 .exposed-wrap-comptes{
+	margin: 0;
+	}
+	
+	
+.exposed-wrap-statut{
+    display: inline-block;
+    margin: 0 30px 20px 0;
+    vertical-align: top;
+	width: 300px;
+}
+
+.exposed-wrap-casiers{
+    display: inline-block;
+    margin: 0 30px 20px 0;
+    vertical-align: top;
+	width: 300px;
+}
+#views-exposed-form-vw-inscription-casier-page-1 label {
+	width:300px;
+}
+/*
+button#edit-submit-vw-inscription-casier {
+    position: relative;
+    top: 20px;
+    left: -120px;
+}
+button#edit-submit-vw-inscription-garderie {
+    position: relative;
+    top: 20px;
+}
+
+button#edit-submit-liste-des-gestionnaires-2 {
+    position: relative;
+    top: 5px;
+}*/
+
+#views-exposed-form-transport-compagnies-page-1 label {
+	width:200px;
+}
+
+/*
+button#edit-submit-transport-compagnies {
+    position: relative;
+    top: 20px;
+    left: -120px;
+}
+*/
+/*#views-exposed-form-comptes-familles-2-page-1 div#edit-actions {
+    position: relative;
+    top: 20px;
+    left: -120px;
+}
+*/
+/*
+#views-exposed-form-vw-inscription-activite-cesame-page-1 div#edit-actions {
+    position: relative;
+    top: 20px;
+    left: -120px;
+}
+
+#views-exposed-form-vw-inscription-transport-page-1 div#edit-actions {
+    position: relative;
+    top: 20px;
+}
+
+#views-exposed-form-vw-inscription-cantine-page-2 div#edit-actions {
+    position: relative;
+    top: 20px;
+}
+
+#views-exposed-form-vw-cmm-inscription-secretariat-page-1 div#edit-actions {
+    position: relative;
+    top: 18px;
+    left: 0px;
+}
+*/
+/*
+button#edit-submit-vw-liste-transport-chauffeur {
+    position: relative;
+    top: 20px;
+}*/
+
+.js-form-item-localite .input-group {
+    width: 500px;
+}
+
+.js-form-item-localite  label {
+	display: block;
+}
+
+.js-form-item-actif label {
+    width: 250px;
+}
+
+/*
+button#edit-submit-vw-liste-transport-personnes {
+    position: relative;
+    top: 20px;
+}*/
+
+.js-form-item-field-statut-du-casier-target-id label {
+    width: 250px;
+}
+
+.js-form-item-field-emplacement-target-id label {
+    width: 250px;
+}
+
+/*
+button#edit-submit-vw-listing-des-casiers {
+    position: relative;
+    top: 20px;
+    left: -120px;
+}*/
+
+/*
+button#edit-submit-gestion-des-arrets {
+    position: relative;
+    top: 8px;
+    left: 20px;
+}*/
+
+a#new_import_paiement {
+    color: #fff!important;
+}
+
+/* tentative modif css */
+thead {
+    background-color: #ce3f27;
+    color: #fff;
+}
+.table-striped > tbody > tr:nth-of-type(odd) {
+    background-color: #fffffe;
+}
+.table > tbody > tr > td {
+	font-weight: normal;
+	text-align: center;
+	border: 1px solid #dfd7ca;
+}
+.table > thead:first-child > tr:first-child > th {
+	font-weight: normal;
+	text-align: center;
+	font-size:12px;
+}
+
+.form--inline.form-inline.clearfix {
+    background-color: #f8f5f0;
+    border-color: #dfd7ca;
+}
+
+.form--inline.form-inline.clearfix {
+    background-color: #f8f5f0;
+    padding-left: 30px;
+    padding-top: 15px;
+    /* padding-bottom: 10px; */
+    border: 1px solid #dfd7ca;
+    min-height: 75px!important;
+}
+
+/* Entetes de colonnes des tableaux */
+th a {
+    color: #fff!important;
+}
+/* couleur des liens ds tableaux sur fond foncé */
+.table-striped > tbody > tr:nth-of-type(odd) a {
+    color: #797364 !important;
+}
+.table-striped > tbody > tr {
+    background-color: #e4e6e2;
+}
+
+label {
+    display: inline-block;
+    max-width: 100%!important;
+    margin-bottom: 5px!important;
+    font-weight: bold;
+    width: 100%;
+}
+
+a.button.js-form-submit.form-submit.btn-default.btn.icon-before {
+    color: #fff!important;
+}
+
+#block-selecteurdelangue a.btn.btn-default.btn-sm {
+    color: #fff!important;
+    text-decoration: underline!important;
+}
+
+#edit-field-arr-wrapper .js-text-full{
+	pointer-events:none;
+}
+
+#field-arr-add-more-wrapper button.tabledrag-toggle-weight.btn-sm.btn.btn-default {
+    display: none;
+}
+
+#field-arr-values th.field-label {
+    text-align: left;
+}
+
+.form-control {
+	height: 26px!important;
+	padding-top: 0px;
+    padding-bottom: 0px;
+}
+
+textarea.form-control {
+    height: auto!important;
+}
+
+select[multiple], select[size] {
+    height: auto!important;
+}
+
+
+span.input-group-addon {
+    font-size: 10px;
+    padding: 0px;
+    width: 20px;
+}
+button, .button {
+    height: 26px;
+    padding-top: 0px!important;
+    padding-bottom: 0px!important;
+}
+
+.field--name-field-id-old {
+    display: none;
+}
+
+div#edit-relations {
+    display: none;
+}
+
+header#user_connected {
+    text-align: right;
+    font-weight: normal;
+    font-size: 12px;
+    color: gray;
+}
+
+html, html.mm-opened {
+	overflow: scroll!important;
+}
+
+.row.synthese {
+    margin-left: 10px!important;
+    margin-right: 10px!important;
+}
+
+.synthese-transport-form a#edit-remboursement {
+    top: 23px;
+    position: relative;
+    float: right;
+}
+
+.synthese-transport-form  button#edit-remboursement {
+    top: 23px!important;
+    position: relative;
+}
+
+
+@media (min-width: 1650px) {
+  .container {
+    width: 1600px;
+  }
+}
+@media (min-width: 1650px) {
+  .navbar.container {
+    max-width: 1550px;
+    height: 50px;
+  }
+}
+
+.page-header {
+	color: #fff!important;
+	text-transform: none!important;
+    padding-top: 7px!important;
+    padding-left: 10px!important;
+	
+}
+
+.navbar-default {
+    background-color: #ce3f27;
+    border-color: #ce3f27;
+}
+
+a.name.navbar-brand {
+    text-decoration: none!important;
+}
+
+a#edit-exportcsv, 
+a#exportcsv_inscriptioncmm,
+a#exportcsvmailing_inscriptioncmm,
+a#exportcsvmailing_inscriptiontransport,
+a#exportcsvmailing_inscriptioncantine,
+a#exportcsvmailing_inscriptioncasiers,
+a#exportcsvmailing_inscriptiongarderie,
+a#exportcsvmailing_inscriptionactivites,
+a#edit-liste-infos-enfants,
+a#edit-liste-infos-enfants-2,
+a#edit-liste-infos-enfants-3,
+#edit-liste-enfants-par-arret-pdf,
+#edit-liste-enfants-par-arret-csv,
+a#edit-liste-arrets-par-zip,
+a#edit-liste-enfants-par-cours-natation-pdf {
+    color: #fff!important;
+    text-decoration: none!important;
+    border: none;
+    font-size: 11px;
+    line-height: 22px;
+    background-color: #3e3f3a;
+    display: inline-block;
+    font-weight: normal;
+    text-align: center;
+    -ms-touch-action: manipulation;
+    border: 1px solid transparent;
+    padding: 0px 10px;
+    height: 25px;
+    
+}
+
+a#edit-liste-arrets-par-zip {
+    margin-bottom: 20px;
+}
+
+.recap-activites-form #edit-exportcsv {
+    top: 0px!important;
+    position: relative;
+}
+
+a#edit-maj-places-dispos {
+    position: relative;
+    top: -10px;
+    left: 10px;
+}
+
+.msg_exportcsv {
+    font-size: 20px;
+}
+
+a.a_exportcsv {
+    color: #66512c!important;
+}
+
+div#footer_title_service {
+    font-weight: 600;
+    color: #000;
+}
+.site_slogan {
+    color: #6784b6;
+    font-size: 18px;
+    width: 600px;
+    position: relative;
+    top: 10px;
+}
+
+a.name.navbar-brand {
+    position: relative;
+    
+    color: #6784b6!important;
+}
+
+.site_adresse {
+    width: 600px;
+    position: relative;
+    top: 15px;
+}
+
+section#slogan_logo_address {
+    width: 600px;
+    top: 10px;
+    float: left;
+}
+
+a.langue_disabled {
+    color: #b6c453!important;
+}
+
+.block-language {
+    float: right;
+    position: relative;
+    top: 10px;
+}
+
+.BtnCommander {
+    text-align: right;
+}
+
+.btn {
+	font-weight: 100;
+    text-transform: none;
+    border-radius: unset;
+   /* height: 30px;
+    width: 170px;
+    padding: 5px 0px 0px 0px!important;*/
+}
+
+aside.asidehome{
+  padding: 15px;
+  min-height: 230px;
+  background-color: #fff;
+  border: 1px #dfd7ca solid;
+  color: #98978b;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+}
+
+aside.asidenatation{
+  padding: 15px;
+  min-height: 130px;
+  background-color: #fff;
+  border: 1px #b6c453 solid;
+  color: #98978b;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+}
+
+aside.asideblock{
+   padding: 0px 0px 15px 15px;
+  background-color: #fff;
+  border: 1px #dfd7ca solid;
+  color: #98978b;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+}
+
+h2.block-title {
+    color: #000;
+    font-size: 20px;
+}
+.description_accueil {
+    width: 100%;
+}
+
+.BtnCommander a.btn.btn-default, a.btn-petit {
+    height: 26px;
+    width: 180px;
+    padding: 3px 0px 0px 0px!important;
+}
+
+td.views-field {
+    font-size: 12px;
+}
+.asidehome a {
+    text-decoration: none!important;
+}
+
+/*
+.view-content {
+    height: 600px;
+}
+
+tbody {
+    height: 400px!important;
+    overflow-y: auto;
+    overflow-x: visible;
+    position: absolute;
+}*/
+
+a#edit-attribution1, a#edit-attribution2, a#edit-attribution3,
+a#edit-submit1, a#edit-submit2, a#edit-submit3,
+a#edit-submit4, a#edit-submit6 {
+    margin-right: 10px;
+    width: 300px;
+    margin-top: 5px;
+}
+
+button#edit-submit5 {
+    position: relative;
+    left: -3px;
+    top: 3px;
+    width: 300px;
+}
+
+button#edit-submit10 {
+    position: relative;
+    left: 5px;
+    top: 3px;
+    width: 300px;
+    background-color: #3e3f3a;
+}
+
+button#edit-submit10 span.icon.glyphicon.glyphicon-ok {
+    display: none;
+}
+
+
+
+th#view-field-level-table-column, 
+th#view-field-classe-table-column,
+th#view-field-nom-table-column, 
+th#view-field-prenom-table-column{
+    min-width: 100px;
+}
+
+
+
+
+/*
+.tooltipcasier {
+    position: relative;
+    display: inline-block;
+    border-bottom: 1px dotted black;
+    opacity: 1!important;
+}
+
+.tooltipcasier .tooltipcasiertext {
+    visibility: hidden;
+    width: 120px;
+    background-color: #555;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px 0;
+    position: absolute;
+    z-index: 1;
+    bottom: 125%;
+    left: 50%;
+    margin-left: -60px;
+    opacity: 0;
+    transition: opacity 1s;
+}
+
+.tooltipcasier .tooltipcasiertext::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: #555 transparent transparent transparent;
+}
+
+.tooltipcasier:hover .tooltipcasiertext {
+    visibility: visible;
+    opacity: 1;
+}*/
+
+.tooltipcasier {outline:none; max-width: 100px;
+    width: 100px; }
+.tooltipcasier strong {line-height:30px;}
+.tooltipcasier:hover {text-decoration:none; max-width: 100px;
+    width: 100px;}
+.tooltipcasier span { z-index:10;display:none; padding:14px 20px; margin-top:-30px; 
+margin-left:28px; width:150px; line-height:16px; }
+
+.tooltipcasier:hover span{ display:block; 
+position: relative; color:#111; 
+border:1px solid #DCA; background:#fffAF0;
+right:130px; top:50px;max-width: 250px;
+    width: 250px;}
+
+.tooltipcasier span { border-radius:4px; -moz-border-radius: 4px; 
+-webkit-border-radius: 4px; -moz-box-shadow: 5px 5px 8px #CCC; 
+-webkit-box-shadow: 5px 5px 8px #CCC; box-shadow: 5px 5px 8px #CCC; max-width: 250px;
+    width: 250px;}
+    
+/*    
+button#edit-submit-vw-cmm-inscription-secretariat {
+    position: relative;
+    right: 150px;
+}*/
+
+#user-login-form button#edit-submit {
+    position: relative;
+    top: -15px;
+}
+
+
+/*
+a#exportcsv_inscriptioncmm {
+    position: relative;
+    top: 1px;
+    right: 155px;
+}*/
+
+.exposed-wrap-arrets {
+    display: inline-block;
+    margin: 0 30px 20px 0;
+    vertical-align: top;
+    width: 750px;
+}
+
+
+a#exportcsvmailing_inscriptiontransport {
+	position: inherit;
+    top: -26px;
+    left: 265px;
+}
+
+a#exportcsvmailing_inscriptioncmm,
+a#exportcsvmailing_inscriptionactivites,
+a#exportcsvmailing_inscriptioncantine,
+a#exportcsvmailing_inscriptioncasiers,
+a#exportcsvmailing_inscriptiongarderie {
+    position: inherit;
+    top: -26px;
+    left: 180px;
+}
+
+#views-exposed-form-vw-inscription-transport-page-1 button#edit-reset {
+	position: relative;
+    left: 272px;
+    top: -26px;	
+}
+
+#views-exposed-form-vw-inscription-cantine-page-2 button#edit-reset,
+#views-exposed-form-vw-inscription-casier-page-1 button#edit-reset,
+#views-exposed-form-vw-inscription-garderie-page-2 button#edit-reset,
+#views-exposed-form-vw-inscription-activite-cesame-page-1 button#edit-reset,
+#views-exposed-form-vw-cmm-inscription-secretariat-page-1 button#edit-reset {
+    position: relative;
+    left: 188px;
+    top: -26px;
+}
+
+
+td.col_classe {
+    vertical-align: sub;
+    width: 130px;
+}
+
+a#edit-exportparentscsv {
+    left: 3px;
+    position: relative;
+}
+
+.view-vw-inscription-activite-cesame tbody,
+.view-vw-liste-activites-moniteur tbody {
+    max-height: 500px;
+    display: block;
+    overflow-y: scroll;
+}
+
+.view-vw-inscription-activite-cesame thead, 
+.view-vw-inscription-activite-cesame tbody tr,
+.view-vw-liste-activites-moniteur thead, 
+.view-vw-liste-activites-moniteur tbody tr
+{
+    display:table;
+    width:100%;
+    table-layout:fixed;
+}
+
+.view-vw-inscription-activite-cesame thead,
+.view-vw-inscription-activite-cesame table  {
+    width:2600px;
+}
+
+.view-vw-liste-activites-moniteur thead
+.view-vw-liste-activites-moniteur table {
+    width:1600px;
+}
+
+
+th#view-field-activite-1-table-column,
+td.views-field.views-field-field-activite-1,
+th#view-field-activite-2-table-column, 
+td.views-field.views-field-field-activite-2,
+th#view-field-activite-3-table-column, 
+td.views-field.views-field-field-activite-3,
+th#view-field-activite-4-table-column,
+td.views-field.views-field-field-activite-4,
+th#view-field-activite-1-choisie-table-column,
+td.views-field.views-field-field-activite-1-choisie,
+th#view-field-activite-2-choisie-table-column,
+td.views-field.views-field-field-activite-2-choisie,
+th#view-field-activite-3-choisie-table-column,
+td.views-field.views-field-field-activite-3-choisie,
+th#view-field-activite-4-choisie-table-column,
+td.views-field.views-field-field-activite-4-choisie
+{
+    width: 200px!important;
+}
+
+th#view-title-table-column,
+td.views-field.views-field-title
+{
+    width: 300px!important;
+}
+
+
+th#view-field-lieu-table-column,
+td.views-field.views-field-field-lieu {
+    width: 80px!important;
+}
+
+th#view-field-jour-activite-table-column,
+td.views-field.views-field-field-jour-activite,
+th#view-field-nombre-de-place-table-column,
+th#view-field-places-restantes-table-column,
+th#view-field-nombre-d-inscrits-table-column,
+th#view-field-level-table-column,
+th#view-field-periode-table-column,
+th#view-field-annee-scolaire-table-column,
+th#view-nothing-table-column,
+th#view-field-tarif-table-column,
+th#view-field-actif-table-column,
+td.views-field.views-field-field-nombre-de-place,
+td.views-field.views-field-field-places-restantes,
+td.views-field.views-field-field-nombre-d-inscrits,
+td.views-field.views-field-field-level,
+td.views-field.views-field-field-tarif,
+td.views-field.views-field-field-periode,
+td.views-field.views-field-field-annee-scolaire,
+td.views-field.views-field-field-actif,
+td.views-field.views-field-nothing,
+th#view-field-site-table-column,
+td.views-field.views-field-field-site.is-active
+ {
+    width: 60px!important;
+}
+
+td.views-field.views-field-views-bulk-operations-bulk-form,
+th.select-all.views-field.views-field-views-bulk-operations-bulk-form {
+    width: 50px!important;
+}
+
+.report_cantine td, .report_mailing td {
+	border: 1px solid;
+}
+.report_cantine_nom , .report_mailing_nom {
+	width: 350px;
+}
+.report_cantine_total, .report_mailing_total {
+	text-align: center;
+	font-weight: bold;
+	background-color: #f8f5f0;
+}
+.report_cantine_jour, report_mailing_email {
+	width: 90px;
+    text-align: center;
+}
+.bold {
+	font-weight: bold;
+}
+.warning {
+    color: red;
+}
+
+input#edit-field-code-value {
+    width: 100px;
+}
+
+a#edit-generate-fiches-presences {
+    left: 7px;
+    position: relative;
+}
+
+a#edit-generate-liste-par-classe {
+    left: 11px;
+    position: relative;
+}
+
+.view-vw-liste-circuits input#edit-title {
+    width: 100px;
+}
+
+.view-liste-des-localites td.views-field.views-field-name {
+    text-align: left;
+}
+
+#views-exposed-form-gestion-des-arrets-page-1 input#edit-field-nombre-de-place-value {
+    width: 80px;
+}
+
+#views-exposed-form-gestion-des-arrets-page-1 .form-item.js-form-item.form-type-select.js-form-type-select.form-item-actif.js-form-item-actif.form-group {
+    width: 100px;
+}
+/*
+#views-exposed-form-gestion-des-arrets-page-1 button#edit-reset {
+    position: relative;
+    top: 8px;
+    left: 20px;
+}*/
+
+#views-exposed-form-vw-liste-circuits-page-1 div#edit-actions {
+    display: block;
+    position: relative;
+    top: 10px;
+    height: 50px;
+}
+
+a#edit-liste-enfants-par-arret-pdf, a#edit-liste-infos-enfants-2, a#edit-liste-infos-enfants-3,
+a#edit-liste-enfants-par-arret-csv {
+    margin-left: 10px;
+}
+
+
+.titre_service_recap_commande {
+	font-weight: bold;
+    color: #000;
+	font-size:14px;
+	text-align: right;
+}
+.titre_total_recap_commande {
+	font-weight: bold;
+    color: #000;
+	font-size:14px;
+	text-align: left;
+}
+
+.statut_recap_commande {
+    width: 300px;
+    font-size: 14px;
+    text-align: right;
+    font-weight: 400;
+}
+.nb_recap_commande {
+    font-size: 14px;
+    text-align: right;
+    font-weight: 400;
+	underline: none;
+}
+.nb_recap_commande a {
+	/*text-decoration: none!important;*/
+	color:orange;
+}
+
+.titre_recap_commande {
+    text-align: center;
+    font-size: 20px;
+    font-weight: 800;
+    color: black;
+}
+
+@media print {
+  a[href]:after {
+    content: none!important;
+  }
+}
+
+#block-footerfirst a,
+#block-footersecond a,
+#block-footerthird a {
+    color: #e8ecf3!important;
+}
+
+.mm-panels {
+	/*couleur de fond du menu */
+    background-color: #ce3f27!important;
+}
+
+
+ul.menu.nav.mm-listview .expanded a,
+ul.menu.nav.mm-listview .expanded a, a.mm-title  {
+	color: #fff!important;
+    text-decoration: none!important;
+    font-weight: 600;
+    font-size: 14px;
+}
+
+#views-form-vw-cmm-inscription-secretariat-page-1 td.views-field.views-field-field-prenom,
+#views-form-vw-cmm-inscription-secretariat-page-1 td.views-field.views-field-field-nom,
+#views-form-vw-cmm-inscription-secretariat-page-1 td.views-field.views-field-field-montant,
+#views-form-vw-cmm-inscription-secretariat-page-1 td.views-field.views-field-field-annee-scolaire,
+#views-form-vw-cmm-inscription-secretariat-page-1 td.views-field.views-field-field-date-cmm-inscription,
+#views-form-vw-cmm-inscription-secretariat-page-1 td.views-field.views-field-field-statut-demande,
+#views-form-vw-cmm-inscription-secretariat-page-1 td.views-field.views-field-nothing,
+.view-id-comptes_familles_2 td.views-field.views-field-field-prenom,
+.view-id-comptes_familles_2 td.views-field.views-field-field-nom,
+.view-id-comptes_familles_2 td.views-field.views-field-field-role-adulte,
+.view-id-comptes_familles_2 td.views-field.views-field-name,
+.view-id-comptes_familles_2 td.views-field.views-field-field-gsm,
+.view-id-comptes_familles_2 td.views-field.views-field-created,
+.view-id-comptes_familles_2 td.views-field.views-field-field-compte-bancaire-bic-,
+
+.view-vw-inscription-activite-cesame td.views-field.views-field-field-prenom,
+.view-vw-inscription-activite-cesame td.views-field.views-field-field-nom,
+.view-vw-inscription-activite-cesame td.views-field.views-field-field-classe,
+.view-vw-inscription-activite-cesame td.views-field.views-field-field-level,
+.view-vw-inscription-activite-cesame td.views-field.views-field-field-activite-1,
+.view-vw-inscription-activite-cesame td.views-field.views-field-field-activite-2,
+.view-vw-inscription-activite-cesame td.views-field.views-field-field-activite-3,
+.view-vw-inscription-activite-cesame td.views-field.views-field-field-activite-4,
+.view-vw-inscription-activite-cesame td.views-field.views-field-field-activite-1-choisie,
+.view-vw-inscription-activite-cesame td.views-field.views-field-field-activite-2-choisie,
+.view-vw-inscription-activite-cesame td.views-field.views-field-field-activite-3-choisie,
+.view-vw-inscription-activite-cesame td.views-field.views-field-field-activite-4-choisie,
+.view-vw-inscription-activite-cesame td.views-field.views-field-field-periode,
+.view-vw-inscription-activite-cesame td.views-field.views-field-field-montant,
+.view-vw-inscription-activite-cesame td.views-field.views-field-field-communication-structuree,
+.view-vw-inscription-activite-cesame td.views-field.views-field-field-statut-demande,
+
+.view-vw-inscription-transport td.views-field,
+.view-vw-inscription-cantine td.views-field,
+.view-vw-inscription-casier td.views-field,
+.view-vw-inscription-garderie td.views-field
+
+
+ {
+    text-align: left!important;
+}
+
+
+div#edit-field-ne-pas-supprimer-wrapper {
+    display: none;
+}
+
+/*bouton page d'inscription */
+
+#user-register-form div#edit-actions {
+    top: 0px!important;
+}
+/* permet de sélectionner toutes les lignes de la view et pas seulement la page */
+.js-form-item-select-all label.control-label.option {
+    display: block!important;
+}
+
+
+.form-item.js-form-item.form-type-select.js-form-type-select.form-item-child-date-jour.js-form-item-child-date-jour.form-no-label.form-group {
+    width: 89px;
+    float: left;
+    margin-right: 5px;
+}
+
+.form-item.js-form-item.form-type-select.js-form-type-select.form-item-child-date-mois.js-form-item-child-date-mois.form-no-label.form-group {
+    width: 140px;
+    float: left;
+    margin-right: 5px;
+}
+
+.form-item.js-form-item.form-type-select.js-form-type-select.form-item-child-date-annee.js-form-item-child-date-annee.form-no-label.form-group {
+    width: 100px;
+    float: left;
+}
+.redstar {
+    color: red;
+    display: inline;
+}
+
+div#findtnaissance {
+    display: inline-block;
+    /* position: relative; */
+    height: 30px;
+}
+
+
+#node-transport-circuits-edit-form div#edit-field-circuit-site-wrapper {
+    width: 150px;
+    float: left;
+}
+#node-transport-circuits-edit-form div#edit-field-type-circuit-wrapper {
+    width: 200px;
+    float: left;
+    margin-left: 10px;
+}
+
+#node-transport-circuits-edit-form div#edit-field-jour-bus-wrapper {
+    width: 200px;
+    float: left;
+    margin-left: 10px;
+}
+
+#node-transport-circuits-edit-form div#edit-field-no-du-bus-wrapper {
+    width: 120px;
+    float: left;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+#node-transport-circuits-edit-form div#edit-title-wrapper {
+    width: 250px;
+    float: left;
+}
+#node-transport-circuits-edit-form div#edit-field-nombre-enfants-wrapper {
+    width: 100px;
+    float: left;
+    margin-left: 10px;
+}
+
+#node-transport-circuits-edit-form div#edit-field-actif-wrapper {
+    float: left;
+    position: relative;
+    top: 15px;
+}
+.return_line {
+    clear: both;
+}
+
+
+.form-item.js-form-item.form-type-select.js-form-type-select.form-item-date-fin-contrat-jour.js-form-item-date-fin-contrat-jour.form-no-label.form-group,
+.form-item.js-form-item.form-type-select.js-form-type-select.form-item-date-debut-jour.js-form-item-date-debut-jour.form-no-label.form-group {
+
+    width: 80px;
+    float: left;
+    margin-right: 5px;
+}
+
+.form-item.js-form-item.form-type-select.js-form-type-select.form-item-date-fin-contrat-mois.js-form-item-date-fin-contrat-mois.form-no-label.form-group,
+.form-item.js-form-item.form-type-select.js-form-type-select.form-item-date-debut-mois.js-form-item-date-debut-mois.form-no-label.form-group {
+
+    width: 140px;
+    float: left;
+    margin-right: 5px;
+}
+
+.form-item.js-form-item.form-type-select.js-form-type-select.form-item-date-fin-contrat-annee.js-form-item-date-fin-contrat-annee.form-no-label.form-group,
+.form-item.js-form-item.form-type-select.js-form-type-select.form-item-date-debut-annee.js-form-item-date-debut-annee.form-no-label.form-group {
+    width: 100px;
+    float: left;
+}
+.redstar {
+    color: red;
+    display: inline;
+}
+
+div#findtfincontrat, div#findtdebut {
+    display: inline-block;
+    /* position: relative; */
+    height: 30px;
+}
+
+.form-item-date-fin-de-service-format {
+	width:125px;
+}
+
+
+td.views-field.views-field-name {
+    text-align: left;
+}
+
+td {
+    text-align: left!important;
+}
+
+.view-id-vw_liste_transport_chauffeur input#edit-field-nom-value,
+.view-id-vw_liste_transport_chauffeur input#edit-field-prenom-value {
+    width: 150px;
+}
+
+#edit-listes-paiement td, #edit-autres-paiement td {
+    border: 1px solid #dfd7ca;
+}
+
+a#exportcsv_paiement {
+    float: ri;
+    position: relative;
+    top: 20px;
+    left: -120px;
+}
+
+.checkboxNatation {
+	margin-top: 0px;
+}
+
+.checkboxNatation .form-checkbox {
+    top: -2px;
+}
+
+button#edit-submit-vw-inscription-natation, #views-exposed-form-vw-inscription-natation-page-1 a#edit-exportcsv {
+    top: -20px;
+    position: relative;
+}
+
+.open-close-inscription-natation-form span.fieldset-legend {
+    font-size: 14px;
+}
+
+.option-radio {
+	position:relative;
+	top:-6px;
+}
+
+.natation_tab {
+	font-weight: bold;
+	text-align:center;
+}
+.natation_niveau {
+	width:200px;
+}
+.natation_cours {
+	width:100px;
+}
+.natation_code {
+	width:70px;
+}
+
+.cours_checkbox_natation {
+    font-size: 20px;
+}
+
+
+#views-form-vw-inscription-transport-page-1 td.views-field.views-field-field-prenom-1,
+#views-form-vw-inscription-transport-page-1 td.views-field.views-field-field-nom-1 {
+    font-weight: bold;
+}
+
+.no-js-message {
+	-webkit-animation:opac 5s;
+   	animation:opac 5s;
+   	position:relative;
+	right:50px;
+	color:red;
+	display:inline-block;
+	
+}
+@keyframes opac{
+   from{opacity:0}
+   to{opacity:1}
+}
+
+.caddy {
+	background-image: url('/themes/cmm/images/cmm_caddy.png');
+	width: 40px;
+    height: 40px;
+    display: block;
+    position: relative;
+    left: -30px;
+}
+
+a.fc-day-number {
+    color: #fff!important;
+}
+a.fc-day-grid-event.fc-h-event.fc-event.fc-start.fc-end, .fc-content, 
+a.fc-day-grid-event.fc-h-event.fc-event.fc-not-start.fc-end,
+a.fc-day-grid-event.fc-h-event.fc-event.fc-not-start.fc-not-end,
+a.fc-day-grid-event.fc-h-event.fc-event.fc-start.fc-not-end {
+    background-color: #7f53e859!important;
+    color: #fff;
+    font-weight: 500;
+    font-size: 12px;
+}
+
+div#edit-body-0-format {
+    display: none;
+}
+
+button.link.link-edit-summary.btn.btn-default.btn-xs.pull-right {
+    display: none;
+}
+
+button#edit-submit {
+    background-color: #ce3f27!important;
+    border-color: #fff!important;
+}
+.dropdown.mm-listitem span.with-below {
+    font-size: 14px;
+    font-weight: 600;
+    /*text-decoration: underline;*/
+    color: #c1c0bd!important;
+}
+
+i.expanded.dropdown.mm-listitem {
+    border-color: #fff!important;
+}

@@ -6,6 +6,12 @@ tc_cmm.liste_events:
     _permission: 'access data_admin_cmm'
 
 
+tc_cmm.liste_ouvrages:
+  path: '/gestion-liste-des-ouvrages'
+  defaults:
+     _entity_view: 'liste_des_ouvrages'
+  requirements:
+    _permission: 'access data_admin_cmm'
     
 tc_cmm.taxonomy_vocabulary.collection:
   path: '/cmm/taxonomy'

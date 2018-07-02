@@ -1,4 +1,4 @@
-tc_cmm:
+tc_cmm_library:
   version: 1.x
   js:
     js/tc_cmm.js: {preprocess: false}
@@ -7,3 +7,6 @@ tc_cmm:
     - core/jquery.once
     - core/jquery.ui.dialog
     - core/jquery.ui.datepicker
+    - core/drupal.ajax
+    - core/drupal
+    - core/drupalSettings
