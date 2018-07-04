@@ -10,3 +10,8 @@ Drupal.behaviors.user = {
 	    
   }
 };
+
+function exportCSV() {
+	//Export CSV dans toutes les views avec un seul export
+	window.open(jQuery(".feed-icon").attr('href'));
+}

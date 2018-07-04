@@ -17,6 +17,26 @@ use Drupal\Component\Serialization\Json;
 
 function tc_cmm_form_alter(&$form, \Drupal\Core\Form\FormStateInterface $form_state, $form_id) {
 	//kint($form_id);
+	
+	if ($form_id == 'node_conf_sponsors_form') {
+		$form['actions']['submit']['#submit'][] = 'tc_cmm_event_callback_save';
+	}
+	
+	if ($form_id == 'node_conf_speaker_form') {
+		$form['actions']['submit']['#submit'][] = 'tc_cmm_event_callback_save';
+	}
+	
+	if ($form_id == 'node_participant_edit_form' || $form_id == 'node_participant_form') {
+		if (isset($_SESSION['id_conf']) && !empty($_SESSION['id_conf'])) {
+			$form['field_conference_annuelle']['widget']['#default_value'] = $_SESSION['id_conf'];
+			$form['field_conference_annuelle']['#disabled'] = 'disabled';
+		}
+		$form['title']['#access'] = FALSE;
+		
+		$form['#entity_builders'][] = 'participant_node_builder'; //Pour créer le title
+		$form['actions']['submit']['#submit'][] = 'tc_cmm_participant_callback_save';
+	}
+	
 	if ($form_id == 'node_event_edit_form' || $form_id == 'node_event_form') {
 		//Si conférence : 
 		
@@ -27,12 +47,22 @@ function tc_cmm_form_alter(&$form, \Drupal\Core\Form\FormStateInterface $form_st
 	    } elseif (isset($arg[2]) && $arg[2]!== 'edit') {
 	      $id = intVal($arg[2]);
 	    }
+	    
+	    $_SESSION['id_conf'] = $id;
 		
 		$vw = views_embed_view('speakers_de_la_conference', 'block_2', $id);
         $renderview = \Drupal::service('renderer')->render($vw);
-		
-		
 		$form['speakers'] =
+            array('#markup' => '<hr />' . $renderview);
+            
+		$vw = views_embed_view('sponsors_de_la_conference', 'block_2', $id);
+        $renderview = \Drupal::service('renderer')->render($vw);
+		$form['sponsors'] =
+            array('#markup' => '<hr />' . $renderview);
+            
+        $vw = views_embed_view('liste_des_participants', 'block_1', $id);
+        $renderview = \Drupal::service('renderer')->render($vw);
+		$form['participants'] =
             array('#markup' => '<hr />' . $renderview);
 	
     		$form['actions']['submit']['#submit'][] = 'tc_cmm_event_callback_save';
@@ -54,6 +84,33 @@ function tc_cmm_page_attachments_alter(array &$attachments) {
   		$attachments['#attached']['library'][] = 'tc_cmm/tc_cmm_library';
   	}
 }
+
+function participant_node_builder($entity_type, NodeInterface $node, $form, FormStateInterface $form_state) {
+	
+	
+	$nom = $node->field_nom->value;
+	$prenom = $node->field_prenom->value;
+	$email = $node->field_email->value;
+	$title = $nom. " ".$prenom." ".$email;
+	$node->setTitle($title);
+	
+	$node->field_conference_annuelle->target_id = $form['field_conference_annuelle']['widget']['#default_value'];
+	//$node->save();
+}
+	
+function tc_cmm_participant_callback_save(array &$form, FormStateInterface $form_state) {
+	//kint($form);die();
+	//$title = 
+	
+	//Si admin CMM
+	if (in_array('admin_cmm', \Drupal::currentUser()->getRoles())) {
+  		$form_state->setRedirect('tc_cmm.liste_participants');
+	} else {
+		//Si membre ou user non connecté
+		$form_state->setRedirect('tc_cmm.liste_conferences');
+	}
+}	
+	
 	
 function tc_cmm_event_callback_save(array &$form, FormStateInterface $form_state) {
   $form_state->setRedirect('tc_cmm.liste_events');
@@ -62,5 +119,28 @@ function tc_cmm_event_callback_save(array &$form, FormStateInterface $form_state
 function tc_cmm_ouvrages_callback_save(array &$form, FormStateInterface $form_state) {
   $form_state->setRedirect('tc_cmm.liste_ouvrages');
 }
+
+function tc_cmm_entity_view_alter(&$build, 
+	$entity, 
+	$display) {
+	
+	
+    
+	$type = $entity->getType();
+	if ($type == event) {
+		$path = \Drupal::request()->getpathInfo();
+	    $arg = explode('/', $path);
+	    if (isset($arg[3]) && $arg[3] != 'edit') {
+	      $id = intVal($arg[3]);
+	    } elseif (isset($arg[2]) && $arg[2]!== 'edit') {
+	      $id = intVal($arg[2]);
+	    }
+	    
+	    $_SESSION['id_conf'] = $id;
+	
+	}		
+	
+}
+
 
 ?>

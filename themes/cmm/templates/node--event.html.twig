@@ -3,6 +3,8 @@
 <div class="col-sm-6"><b>Résumé :</b><br>{{ field_description_courte }}</div>
 
 <div class="return_line">&nbsp;</div>
+<div class="col-sm-12"><b>Programme :</b><br>{{ body|raw }}</div>
+<div class="return_line">&nbsp;</div>
 
 <div class="col-sm-3"><b>Date de début : </b><br>{{ field_start_date | date('d/m/Y') }}</b></div>
 <div class="col-sm-3"><b>Date de fin : </b><br>{{ field_end_date | date('d/m/Y') }}</b></div>
@@ -14,6 +16,9 @@
 <div class="col-sm-3"><b>Date d'ouverture des inscriptions : </b><br>{{ field_date_ouverture_inscription | date('d/m/Y') }}</div>
 <div class="col-sm-3"><b>Date limite d'inscription : </b><br>{{ field_date_limite_inscription | date('d/m/Y') }}</div>
 <div class="return_line">&nbsp;</div>
+<div class="col-sm-3"><a href="/node/add/participant"><b>S'INSCRIRE</b></a></div>
+<div class="return_line">&nbsp;</div>
+
 <div class="col-sm-12">
 	{{ speakers }}
 </div>

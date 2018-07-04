@@ -6,6 +6,21 @@ tc_cmm.liste_events:
     _permission: 'access data_admin_cmm'
 
 
+tc_cmm.liste_participants:
+  path: '/liste-des-participants'
+  defaults:
+     _entity_view: 'liste_des_participants'
+  requirements:
+    _permission: 'access data_admin_cmm'
+
+tc_cmm.liste_conferences:
+  path: '/conference-annuelle'
+  defaults:
+    _entity_access: node.view
+  requirements:
+     _access: 'TRUE' 
+    
+
 tc_cmm.liste_ouvrages:
   path: '/gestion-liste-des-ouvrages'
   defaults:

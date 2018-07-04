@@ -103,6 +103,8 @@ function cmm_preprocess_node(&$variables) {
 			$variables['field_date_ouverture_inscription'] = $event->get('field_date_ouverture_inscription')->getValue()['0']['value'];
 			$variables['title'] = $event->get('title')->getValue()['0']['value'];
 			$variables['field_description_courte'] = $event->get('field_description_courte')->getValue()['0']['value'];
+			$variables['body'] = $event->get('body')->getValue()['0']['value'];
+			
 			$variables['id_type_event'] = $typeEvent;
 			$term = \Drupal\taxonomy\Entity\Term::load($typeEvent);
 			$variables['field_type_event'] = $term->toLink()->getText();
@@ -237,13 +239,16 @@ function cmm_theme_suggestions_alter(array &$suggestions, array $variables)
 		        		$suggestions[] = "event_edit_conference";
 		   			//Mais le twig doit s'appeler event-edit-conference.html.twig
 		   			
-		   			
-					
 		   		} else {
 		   			$suggestions[] = "event_edit_noconference";
 		   		}
 	   			
 	   		}
+	   		
+	   		 if ($variables['element']['#id'] == 'node-participant-edit-form'
+	   		 		|| $variables['element']['#id'] == 'node-participant-form') {
+	   		 	$suggestions[] = "event_edit_participant";
+	   		 }
 	   	}
 	}
 
